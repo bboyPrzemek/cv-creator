@@ -17,6 +17,9 @@
 .section span, .section-title span{
     padding: 0 20px;
 }
+.input-container span{
+    padding: 0 0;
+}
 
 .sections{
     padding-top: 20px;
@@ -40,3 +43,9 @@
     height: 16px;
     margin-right: 5px;
 }
+
+@media only screen and (max-width: 1024px) {
+    .active .section-name {
+      display: none;
+    }
+  }
