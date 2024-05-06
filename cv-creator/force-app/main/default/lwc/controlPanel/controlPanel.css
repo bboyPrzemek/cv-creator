@@ -1,0 +1,42 @@
+.control-container{
+    border-right: 1px solid #cccccc;
+    font-weight: 100;
+}
+.section{
+    line-height: 40px;
+    height: auto;
+    text-wrap: nowrap;
+}
+
+.section:hover{
+    background-color: #E8EDFB;
+    color:#335EEA;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.section span, .section-title span{
+    padding: 0 20px;
+}
+
+.sections{
+    padding-top: 20px;
+    color:#696969;
+}
+
+.active{
+    background-color: #E8EDFB;
+    color:#335EEA;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.separator{
+    width: calc(100% - 10px);
+    height: 1px;
+    border-bottom: 1px solid #cccccc;
+    margin: 20px auto;
+}
+.icon{
+    margin-top:-1px;
+    height: 16px;
+    margin-right: 5px;
+}

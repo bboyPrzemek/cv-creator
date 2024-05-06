@@ -1,0 +1,18 @@
+<template>
+    <div class="container">
+        <div class="header-cmp">
+            <c-section-header title="Znajomośc języków"></c-section-header>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap body-cmp">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Język"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Poziom"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <button class="slds-button slds-button_success" onclick={addSkillSection}>Dodaj</button>
+            </div>
+        </div>
+    </div>
+</template>

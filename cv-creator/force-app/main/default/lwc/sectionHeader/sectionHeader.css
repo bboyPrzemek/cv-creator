@@ -1,0 +1,10 @@
+
+.separator{
+    width: calc(100% - 10px);
+    height: 1px;
+    border-bottom: 1px solid #cccccc;
+    margin: 20px auto;
+}
+.title{
+    font-weight: 500;
+}

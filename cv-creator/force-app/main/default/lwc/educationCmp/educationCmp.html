@@ -1,0 +1,37 @@
+<template>
+    <div class="container">
+        <div class="header-cmp">
+            <c-section-header title="Wykształcenie"></c-section-header>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap body-cmp" >
+            <div class="slds-col slds-size_1-of-1">
+                <button class="slds-button slds-button_destructive" onclick={removeEducationSection}>Usuń</button>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="Date" label="Data rozpoczęcia"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="Date" label="Data zakończenia"></lightning-input>
+                <lightning-input type="Checkbox" label="Nadal się uczę"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Szkoła"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Kierunek"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                <lightning-input-rich-text type="text" label="Opis"></lightning-input-rich-text>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <button class="slds-button slds-button_success" onclick={addEducationSection}>Dodaj</button>
+            </div>
+        </div>
+        <c-separator></c-separator>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1">
+                <button class="slds-button slds-button_brand">Zapisz</button>
+            </div>
+        </div>
+    </div>
+</template>

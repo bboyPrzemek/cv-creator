@@ -1,0 +1,59 @@
+<template lwc:render-mode="light">
+    <div class="control-container">
+        <div class="sections">
+            <div class="section-title" id="title">
+                <span><img class="icon" src={configurationIcon}/>Konfiguracja</span>
+            </div>
+            <c-separator></c-separator>
+            <div class="section active" data-component="personalDataCmp">
+                <span onclick={handleClick}>Dane Osobowe</span>
+                <div class="input-slot"></div>
+             </div>
+             <div class="section" data-component="educationCmp">
+                <span onclick={handleClick}>Wykształcenie</span>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="jobExperienceCmp">
+                <span onclick={handleClick}>Doświadczenie zawodowe</span>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="skillsCmp">
+                <span onclick={handleClick}>Umiejętności</span>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="languagesCmp">
+                <span onclick={handleClick}>Znajomośc języków</span>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="interestsCmp">
+                <span onclick={handleClick}>Zainteresowania</span>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="aboutCmp">
+                <span onclick={handleClick}>O mnie</span>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="clauseCmp">
+                <span onclick={handleClick}>Klauzula</span>
+                <div class="input-slot"></div>
+            </div>
+            <c-separator></c-separator>
+            <div class="section">
+                <span onclick={handleClick}>Dodaj usuń sekcję</span>
+            </div>
+            <div class="section">
+                <span onclick={handleClick}>Zmień kolejność</span>
+            </div>
+            <c-separator></c-separator>
+            <div class="section">
+                <span><img class="icon" src={previewIcon}/>Podgląd</span>
+            </div>
+            <div class="section">
+                <span><img class="icon" src={saveIcon}/>Zapisz</span>
+            </div>
+            <div class="section">
+                <span><img class="icon" src={downloadIcon}/>Pobierz</span>
+            </div>
+        </div>
+    </div>
+</template>

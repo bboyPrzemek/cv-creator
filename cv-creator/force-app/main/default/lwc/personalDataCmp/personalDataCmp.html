@@ -1,0 +1,42 @@
+<template>
+    <div class="container" if:true={personalData.data}>
+        <div class="header-cmp">
+            <c-section-header title="Dane Osobowe"></c-section-header>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1">
+                <img class="personal-photo" src={avatarIcon}/>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1">
+                <lightning-input type="file" label="Zdjęcie"></lightning-input>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Imię" value={personalData.data.FirstName__c}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Nazwisko" value={personalData.data.LastName__c}></lightning-input>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="email" label="Email" value={personalData.data.Email__c}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                <lightning-input type="" label="Telefon" value={personalData.data.Phone__c}></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                <lightning-input type="date" label="Data Urodzenia" value={personalData.data.Birthdate__c}></lightning-input>
+            </div>
+        </div>
+        <c-separator></c-separator>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-1">
+                <button class="slds-button slds-button_brand">Zapisz</button>
+            </div>
+        </div>
+    </div>
+</template>

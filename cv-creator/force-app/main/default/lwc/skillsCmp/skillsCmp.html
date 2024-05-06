@@ -1,0 +1,21 @@
+<template>
+    <div class="container">
+        <div class="header-cmp">
+            <c-section-header title="Umiejętności"></c-section-header>
+        </div>
+        <div class="slds-grid slds-gutters slds-wrap body-cmp">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                <lightning-input type="checkbox" label="Ukryj poziom umiejętności"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Umiejętność"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-input type="text" label="Poziom umiejętności"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+                <button class="slds-button slds-button_success" onclick={addSkillSection}>Dodaj</button>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,12 @@
+div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #F7F6F9;
+    border-bottom: 1px solid #cccccc;
+}
+
+img{
+    height: 34px;
+}

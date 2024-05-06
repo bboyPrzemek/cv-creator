@@ -1,0 +1,30 @@
+<template lwc:render-mode="light">
+    <div class="input-wrapper">
+        <div class="input-container">
+            <template lwc:if={a}>
+                <c-personal-data-cmp></c-personal-data-cmp>
+            </template>
+            <template lwc:elseif={b}>
+                <c-education-cmp></c-education-cmp>
+            </template>
+            <template lwc:elseif={c}>
+                <c-job-experience-cmp></c-job-experience-cmp>
+            </template>
+            <template lwc:elseif={d}>
+                <c-skills-cmp></c-skills-cmp>
+            </template>
+            <template lwc:elseif={e}>
+                <c-languages-cmp></c-languages-cmp>
+            </template>
+            <template lwc:elseif={f}>
+                <c-interests-cmp></c-interests-cmp>
+            </template>
+            <template lwc:elseif={g}>
+                <c-about-cmp></c-about-cmp>
+            </template>
+            <template lwc:elseif={h}>
+                <c-clause-cmp></c-clause-cmp>
+            </template>
+        </div>
+    </div>
+</template>

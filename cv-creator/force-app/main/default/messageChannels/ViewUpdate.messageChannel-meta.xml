@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>ViewUpdate</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Used for updating the input view</description>
+    <lightningMessageFields>
+        <fieldName>componentName</fieldName>
+        <description>Component that will overwrite current input view</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
