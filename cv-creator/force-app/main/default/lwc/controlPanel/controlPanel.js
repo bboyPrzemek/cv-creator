@@ -21,6 +21,7 @@ export default class ControlPanel extends LightningElement {
         console.log(componentName);
         var sections = document.getElementsByClassName('section');
 
+        location.href;
         Array.prototype.forEach.call(sections, s => {
            s.classList.remove('active');
           });

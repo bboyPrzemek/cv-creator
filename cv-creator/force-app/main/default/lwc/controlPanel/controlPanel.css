@@ -14,7 +14,7 @@
     border-radius: 10px 0px 0px 10px;
 }
 
-.section span, .section-title span{
+.section a, .section-title span{
     padding: 0 20px;
 }
 .input-container span{
@@ -45,7 +45,7 @@
 }
 
 @media only screen and (max-width: 1024px) {
-    .active .section-name {
+    .active a {
       display: none;
     }
   }
