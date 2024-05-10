@@ -3,20 +3,20 @@
     font-weight: 100;
 }
 .section{
-    line-height: 40px;
-    height: auto;
+    min-height: 67px;
     text-wrap: nowrap;
 }
 
+.section-title{
+    padding: 0 10px;
+}
+
 .section:hover{
-    background-color: #E8EDFB;
-    color:#335EEA;
+    background-color: #FAFAFA;
     border-radius: 10px 0px 0px 10px;
 }
 
-.section a, .section-title span{
-    padding: 0 20px;
-}
+
 .input-container span{
     padding: 0 0;
 }
@@ -27,9 +27,7 @@
 }
 
 .active{
-    background-color: #E8EDFB;
-    color:#335EEA;
-    border-radius: 10px 0px 0px 10px;
+    background-color: #FAFAFA;
 }
 
 .separator{
@@ -44,11 +42,23 @@
     margin-right: 5px;
 }
 
+a:hover{
+    text-decoration: none !important;
+}
+
+
+a{
+    color: black !important;
+    line-height: 67px;
+    margin-left: 5px;
+}
+
 @media only screen and (max-width: 1024px) {
     .header-cmp {
         display: none;
     }
-    .active, .active:hover{
-        border-radius: 20px 20px 0px 0px;
+
+    .active svg{
+            transform: rotate(90deg);
     }
   }

@@ -13,23 +13,24 @@ export default class ControlPanel extends LightningElement {
     saveIcon = resources + '/save-icon.png';
     downloadIcon = resources + '/download-icon.png';
 
-
     handleClick(event) {
-        let target = event.currentTarget;
-        let section = target.closest(".section");
-        let componentName = section.dataset.component;
-        console.log(componentName);
-        var sections = document.getElementsByClassName('section');
+        let section = event.currentTarget.closest(".section");
 
-        location.href;
-        Array.prototype.forEach.call(sections, s => {
-           s.classList.remove('active');
-          });
-          
+        this.toggle(section);
 
-        section.classList.add('active');
         publish(this.messageContext, ViewUpdate, {
-            'componentName': componentName
+            'componentName': section.dataset.component
         });
+    }
+
+    toggle(section){
+        Array.prototype.forEach.call(document.getElementsByClassName('section'), s => {
+            s.classList.remove('active');
+        });
+        section.classList.add('active');
+
+        let slot = document.querySelector('.active .input-slot');
+        let disp = slot.style.display;
+        slot.style.display = disp == "block" ? "none" : "block";
     }
 }

@@ -2,57 +2,81 @@
     <div class="control-container">
         <div class="sections">
             <div class="section-title" id="title">
-                <a href="#"><img class="icon" src={configurationIcon}/>Konfiguracja</a>
+                <span><img class="icon" src={configurationIcon} />Konfiguracja</span>
             </div>
             <c-separator></c-separator>
-            <div class="section active" data-component="personalDataCmp">
-                <a href="#" onclick={handleClick}>Dane Osobowe</a>
-                <div class="input-slot"></div>
-             </div>
-             <div class="section" data-component="educationCmp">
-                <a href="#" onclick={handleClick}>Wykształcenie</a>
-                <div class="input-slot"></div>
-            </div>
-            <div class="section" data-component="jobExperienceCmp">
-                <a href="#" onclick={handleClick}>Doświadczenie zawodowe</a>
+            <div class="section active" data-component="personalDataCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >Dane Osobowe</a>
+                </div>
                 <div class="input-slot"></div>
             </div>
-            <div class="section" data-component="skillsCmp">
-                <a href="#" onclick={handleClick}>Umiejętności</a>
+            <div class="section" data-component="educationCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >Wykształcenie</a>
+                </div>
                 <div class="input-slot"></div>
             </div>
-            <div class="section" data-component="languagesCmp">
-                <a href="#" onclick={handleClick}>Znajomośc języków</a>
+            <div class="section" data-component="jobExperienceCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >Doświadczenie zawodowe</a>
+                </div>
                 <div class="input-slot"></div>
             </div>
-            <div class="section" data-component="interestsCmp">
-                <a href="#" onclick={handleClick}>Zainteresowania</a>
+            <div class="section" data-component="skillsCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >Umiejętności</a>
+                </div>
                 <div class="input-slot"></div>
             </div>
-            <div class="section" data-component="aboutCmp">
-                <a href="#" onclick={handleClick}>O mnie</a>
+            <div class="section" data-component="languagesCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >Znajomośc języków</a>
+                </div>
                 <div class="input-slot"></div>
             </div>
-            <div class="section" data-component="clauseCmp">
-                <a href="#" onclick={handleClick}>Klauzula</a>
+            <div class="section" data-component="interestsCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >Zainteresowania</a>
+                </div>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="aboutCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >O mnie</a>
+                </div>
+                <div class="input-slot"></div>
+            </div>
+            <div class="section" data-component="clauseCmp" onclick={handleClick}>
+                <div class ="section-title">
+                    <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                    <a href="#" >Klauzula</a>
+                </div>
                 <div class="input-slot"></div>
             </div>
             <c-separator></c-separator>
             <div class="section">
-                <a href="#" onclick={handleClick}>Dodaj usuń sekcję</a>
+                <a href="#" >Dodaj usuń sekcję</a>
             </div>
             <div class="section">
-                <a onclick={handleClick}>Zmień kolejność</a>
+                <a >Zmień kolejność</a>
             </div>
             <c-separator></c-separator>
             <div class="section">
-                <a href="#"><img class="icon" src={previewIcon}/>Podgląd</a>
+                <a href="#"><img class="icon" src={previewIcon} />Podgląd</a>
             </div>
             <div class="section">
-                <a href="#"><img class="icon" src={saveIcon}/>Zapisz</a>
+                <a href="#"><img class="icon" src={saveIcon} />Zapisz</a>
             </div>
             <div class="section">
-                <a href="#"><img class="icon" src={downloadIcon}/>Pobierz</a>
+                <a href="#"><img class="icon" src={downloadIcon} />Pobierz</a>
             </div>
         </div>
     </div>
