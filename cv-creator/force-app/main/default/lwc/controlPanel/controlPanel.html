@@ -5,7 +5,23 @@
                 <span><img class="icon" src={configurationIcon} />Konfiguracja</span>
             </div>
             <c-separator></c-separator>
-            <div class="section active" data-component="personalDataCmp" onclick={handleClick}>
+            <template iterator:it={sections.data}>
+                <div key={it.value.Id} lwc:if={it.first} class="section active" data-component={it.value.Name__c} onclick={handleClick}>
+                    <div class ="section-title">
+                        <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                        <a href="#" >{it.value.Name}</a>
+                    </div>
+                    <div class="input-slot"></div>
+                </div>
+                <div lwc:else key={it.value.Id} class="section" data-component={it.value.Name__c} onclick={handleClick}>
+                    <div class ="section-title">
+                        <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
+                        <a href="#" >{it.value.Name}</a>
+                    </div>
+                    <div class="input-slot"></div>
+                </div>
+            </template>
+            <!-- <div class="section active" data-component="personalDataCmp" onclick={handleClick}>
                 <div class ="section-title">
                     <lightning-icon icon-name="utility:chevronright" size="xx-small"></lightning-icon>
                     <a href="#" >Dane Osobowe</a>
@@ -60,7 +76,7 @@
                     <a href="#" >Klauzula</a>
                 </div>
                 <div class="input-slot"></div>
-            </div>
+            </div> -->
             <c-separator></c-separator>
             <div class="section">
                 <a href="#" >Dodaj usuń sekcję</a>

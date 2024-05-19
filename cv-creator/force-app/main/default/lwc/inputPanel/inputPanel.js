@@ -5,10 +5,9 @@ import ViewUpdate from '@salesforce/messageChannel/ViewUpdate__c';
 
 export default class InputPanel extends LightningElement {
     static renderMode = "light";
-    @wire(MessageContext)
-    messageContext;
+    @wire(MessageContext) messageContext;
     subscription = null;
-    
+
     a = true;
     b = false;
     c = false;
@@ -20,20 +19,23 @@ export default class InputPanel extends LightningElement {
     isAppended = false;
 
     renderedCallback() {
-        let wrapper = document.querySelector('.input-wrapper');
-        subscribe(this.messageContext, ViewUpdate, (message) => this.loadView(message,document.querySelector('.active .input-slot'), wrapper));
+        if (!this.subscription){
+            this.subscription = subscribe(this.messageContext, ViewUpdate, (message) => {
+                this.loadView(message);
 
-        //refactor
-
-        this.injectInputCmp(document.querySelector('.active .input-slot'), wrapper);
-        window.addEventListener('resize', () => {
-            this.injectInputCmp(document.querySelector('.active .input-slot'), wrapper);
-        });
+                if (window.innerWidth < 1024) {
+                    console.log(message);
+                    if (message) {
+                        this.injectInputCmp();
+                    }
+                } else {
+                    this.uninjectInputCmp();
+                }
+            });
+        }
     }
 
-    loadView(componentName,cmp,cmp2) {
-        this.injectInputCmp(cmp, cmp2, componentName);
-
+    loadView(componentName) {
         this.a = false;
         this.b = false;
         this.c = false;
@@ -43,34 +45,35 @@ export default class InputPanel extends LightningElement {
         this.g = false;
         this.h = false;
 
-        if (componentName.componentName == "educationCmp") {
+        if (componentName.componentName == "education") {
             this.b = true;
-        } else if (componentName.componentName == "personalDataCmp") {
+        } else if (componentName.componentName == "personal") {
             this.a = true;
-        } else if (componentName.componentName == "skillsCmp") {
+        } else if (componentName.componentName == "skills") {
             this.d = true;
-        } else if (componentName.componentName == "languagesCmp") {
+        } else if (componentName.componentName == "lang") {
             this.e = true;
-        } else if (componentName.componentName == "interestsCmp") {
+        } else if (componentName.componentName == "interests") {
             this.f = true;
-        } else if (componentName.componentName == "aboutCmp") {
+        } else if (componentName.componentName == "about") {
             this.g = true;
-        } else if (componentName.componentName == "clauseCmp") {
+        } else if (componentName.componentName == "clause") {
             this.h = true;
         } else {
             this.c = true;
         }
+        this.isAppended = false;
     }
 
-    injectInputCmp(cmp, cmp2, message) {
-        if (window.innerWidth < 1024) {
-            if (!this.isAppended || message) {
-                cmp.append(document.querySelector('.input-container'));
+    injectInputCmp() {
+            let input_slot = document.querySelector('.active .input-slot')
+            if (!this.isAppended) {
+                input_slot.append(document.querySelector('.input-container'));
                 this.isAppended = true;
             }
-        } else {
-            this.isAppended = false;
-            cmp2.append(document.querySelector('.input-container'));
-        }
+    }
+    uninjectInputCmp(){
+        this.isAppended = false;
+        document.querySelector('.input-wrapper').append(document.querySelector('.input-container'));
     }
 }

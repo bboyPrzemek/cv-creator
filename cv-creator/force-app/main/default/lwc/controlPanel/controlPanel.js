@@ -2,11 +2,14 @@ import { LightningElement, wire} from 'lwc';
 import resources from "@salesforce/resourceUrl/ResumeAppResources";
 import { publish, MessageContext } from 'lightning/messageService';
 import ViewUpdate from '@salesforce/messageChannel/ViewUpdate__c'
+import getSections from '@salesforce/apex/ControlPanelController.getSections';
 
 export default class ControlPanel extends LightningElement {
     static renderMode = "light";
-    @wire(MessageContext)
-    messageContext;
+    isAppended = false;
+
+    @wire(MessageContext) messageContext;
+    @wire(getSections) sections;
 
     configurationIcon = resources + '/configuration-icon.png';
     previewIcon = resources + '/preview-icon.png';
@@ -21,6 +24,35 @@ export default class ControlPanel extends LightningElement {
         publish(this.messageContext, ViewUpdate, {
             'componentName': section.dataset.component
         });
+    }
+
+    renderedCallback(){
+        if (window.innerWidth < 1024) {
+            this.injectInputCmp();
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 1024) {
+                this.injectInputCmp();
+            }else {
+                this.unInjectInputCmp();
+            }
+        });
+    }
+
+    injectInputCmp() {
+        let input_slot = document.querySelector('.active .input-slot');
+        if (input_slot) {
+            if (!this.isAppended) {
+                input_slot.append(document.querySelector('.input-container'));
+                this.isAppended = true;
+             }
+        }
+    }
+
+    unInjectInputCmp(){
+        this.isAppended = false;
+        document.querySelector('.input-wrapper').append(document.querySelector('.input-container'));
     }
 
     toggle(section){
